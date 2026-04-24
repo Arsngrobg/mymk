@@ -26,12 +26,28 @@ PATHSEP := /
 MKDIR   := mkdir -p
 RMDIR   := rm -rf
 RM      := rm -f
-endif
+endif # ComSpec
 LOG     := echo make:
 
 # COMPILER
 CC      ?= cc
 CFLAGS  ?= -std=c11 -O2 -Wall -Wextra -Werror -Wpedantic
+
+# LIBRARIES
+ifeq ($(OS),Windows_NT)
+SOEXT   := dll
+SOFLAG  := -shared
+else
+OS := $(shell uname -s)
+ifeq ($(OS),Darwin)
+SOEXT   := dylib
+SOFLAG  := -dynamiclib
+override CFLAGS += -fPIC
+else
+SOEXT   := so
+SOFLAG  := -shared
+endif # $(OS),Darwin
+endif # $(OS),Windows_NT
 
 # COMMON RECIPES
 %/:
