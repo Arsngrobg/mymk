@@ -31,7 +31,7 @@ LOG     := echo make:
 
 # COMPILER
 CC      ?= cc
-CFLAGS  ?= -std=c11 -O2 -Wall -Wextra -Werror -Wpedantic
+CFLAGS  ?= -Wall -Wextra -Werror -Wpedantic
 
 # LIBRARIES
 ifeq ($(OS),Windows_NT)
