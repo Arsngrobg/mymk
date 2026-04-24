@@ -6,6 +6,9 @@
 #              `───'
 #    Standardized, cross-platform GNU Make
 
+ifndef MYMK_MK
+MYMK_MK := $(lastword $(MAKEFILE_LIST))
+
 # BUILD SYSTEM
 BUILDDIR ?= build
 OBJDIR   := $(BUILDDIR)/obj
@@ -34,3 +37,5 @@ CFLAGS  ?= -std=c11 -O2 -Wall -Wextra -Werror -Wpedantic
 %/:
 	@$(LOG) Creating $@ directory
 	@$(MKDIR) $(subst /,$(PATHSEP),$@)
+
+endif # MYMK_MK
