@@ -28,13 +28,11 @@ RMDIR   := rm -rf
 RM      := rm -f
 endif # ComSpec
 LOG     := echo make:
-
-# COMPILER
 CC      ?= cc
-CFLAGS  ?= -Wall -Wextra -Werror -Wpedantic
-
-# ARCHIVING
 AR      ?= ar
+
+# FLAGS
+CFLAGS  ?= -Wall -Wextra -Werror -Wpedantic
 ARFLAGS := -rcs
 
 # LIBRARIES
