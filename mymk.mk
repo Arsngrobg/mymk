@@ -33,6 +33,10 @@ LOG     := echo make:
 CC      ?= cc
 CFLAGS  ?= -Wall -Wextra -Werror -Wpedantic
 
+# ARCHIVING
+AR      ?= ar
+ARFLAGS := -rcs
+
 # LIBRARIES
 ifeq ($(OS),Windows_NT)
 SOEXT   := dll
