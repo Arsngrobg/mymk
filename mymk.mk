@@ -19,7 +19,7 @@ BINDIR   := $(BUILDDIR)/bin
 ifdef ComSpec
 PATHSEP := $()\$()
 MKDIR   := mkdir
-RMDIR   := rmdir /Q /S
+RMDIR   := rmdir /Q /S 2>nul
 RM      := del
 else
 PATHSEP := /
