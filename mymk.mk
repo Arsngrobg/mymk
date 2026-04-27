@@ -15,7 +15,7 @@ OBJDIR   := $(BUILDDIR)/obj
 LIBDIR   := $(BUILDDIR)/lib
 BINDIR   := $(BUILDDIR)/bin
 DESTDIR  ?= $(BUILDDIR)/pkg
-PREFIX   ?= $()
+PREFIX   ?= /
 
 # SHELL UTILITIES
 ifdef ComSpec
