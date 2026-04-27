@@ -39,6 +39,7 @@ ARFLAGS := -rcs
 
 # CROSS-PLATFORM DEFINITIONS
 ifeq ($(OS),Windows_NT)
+EXEXT   := .exe
 SOEXT   := dll
 SOFLAG  := -shared
 else
@@ -51,6 +52,7 @@ SOEXT   := so
 SOFLAG  := -shared
 override CFLAGS += -fPIC
 endif # $(OS),Darwin
+EXEXT   := $()
 endif # $(OS),Windows_NT
 
 # COMMON RECIPES
