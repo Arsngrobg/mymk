@@ -12,9 +12,9 @@ MYMK_MK := $(lastword $(MAKEFILE_LIST))
 # BUILD SYSTEM
 PREFIX   ?= /
 BUILDDIR := build
-OBJDIR   := $(BUILDDIR)/obj
-LIBDIR   := $(BUILDDIR)/lib
-BINDIR   := $(BUILDDIR)/bin
+OBJDUMP  := $(BUILDDIR)/obj
+LIBDUMP  := $(BUILDDIR)/lib
+BINDUMP  := $(BUILDDIR)/bin
 DESTDIR  ?= $(BUILDDIR)/pkg
 
 # SHELL UTILITIES
