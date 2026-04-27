@@ -10,12 +10,12 @@ ifndef MYMK_MK
 MYMK_MK := $(lastword $(MAKEFILE_LIST))
 
 # BUILD SYSTEM
+PREFIX   ?= /
 BUILDDIR := build
 OBJDIR   := $(BUILDDIR)/obj
 LIBDIR   := $(BUILDDIR)/lib
 BINDIR   := $(BUILDDIR)/bin
 DESTDIR  ?= $(BUILDDIR)/pkg
-PREFIX   ?= /
 
 # SHELL UTILITIES
 ifdef ComSpec
