@@ -10,7 +10,7 @@ ifndef MYMK_MK
 MYMK_MK := $(lastword $(MAKEFILE_LIST))
 
 # BUILD SYSTEM
-BUILDDIR ?= build
+BUILDDIR := build
 OBJDIR   := $(BUILDDIR)/obj
 LIBDIR   := $(BUILDDIR)/lib
 BINDIR   := $(BUILDDIR)/bin
