@@ -47,10 +47,10 @@ OS := $(shell uname -s)
 ifeq ($(OS),Darwin)
 SOEXT   := dylib
 SOFLAG  := -dynamiclib
-override CFLAGS += -fPIC
 else
 SOEXT   := so
 SOFLAG  := -shared
+override CFLAGS += -fPIC
 endif # $(OS),Darwin
 endif # $(OS),Windows_NT
 
