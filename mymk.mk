@@ -53,7 +53,7 @@ endif # $(OS),Windows_NT
 
 # COMMON RECIPES
 %/:
-	@$(LOG) Creating $@ directory
+	@$(LOG) Creating new directory: $@
 	@$(MKDIR) $(subst /,$(PATHSEP),$@)
 
 endif # MYMK_MK
