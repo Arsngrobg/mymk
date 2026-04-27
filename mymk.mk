@@ -15,6 +15,7 @@ OBJDIR   := $(BUILDDIR)/obj
 LIBDIR   := $(BUILDDIR)/lib
 BINDIR   := $(BUILDDIR)/bin
 DESTDIR  ?= $(BUILDDIR)/pkg
+PREFIX   ?= $()
 
 # SHELL UTILITIES
 ifdef ComSpec
@@ -38,11 +39,9 @@ ARFLAGS := -rcs
 
 # CROSS-PLATFORM DEFINITIONS
 ifeq ($(OS),Windows_NT)
-PREFIX  ?= C:$(PATHSEP)$(USERNAME)$(PATHSEP)AppData$(PATHSEP)Local$(PATHSEP)
 SOEXT   := dll
 SOFLAG  := -shared
 else
-PREFIX  ?= $(PATHSEP)usr$(PATHSEP)local$(PATHSEP)
 OS := $(shell uname -s)
 ifeq ($(OS),Darwin)
 SOEXT   := dylib
