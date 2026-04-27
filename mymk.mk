@@ -13,7 +13,6 @@ MYMK_MK := $(lastword $(MAKEFILE_LIST))
 PREFIX   ?= /
 BUILDDIR := build
 OBJDUMP  := $(BUILDDIR)/obj
-DEPDUMP  := $(BUILDDIR)/dep
 LIBDUMP  := $(BUILDDIR)/lib
 BINDUMP  := $(BUILDDIR)/bin
 DESTDIR  ?= $(BUILDDIR)/pkg
@@ -55,9 +54,6 @@ override CFLAGS += -fPIC
 endif # $(OS),Darwin
 EXEXT   := $()
 endif # $(OS),Windows_NT
-
-# SNIPPETS
-CC_ENABLEDEPS = -MMD -MD -MF $(DEPDUMP)/$*.d
 
 # COMMON RECIPES
 %/:
